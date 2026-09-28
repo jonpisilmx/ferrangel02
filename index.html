@@ -1,47 +1,23 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fernanda Rangel | Conciencia Financiera</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    
-    <style>
-        :root {
-            /* Paleta Oficial */
-            --navy-primary: #111462;
-            --bg-light: #E4ECEF;
-            --magenta-accent: #D938AD;
-            --card-bg: rgba(255, 255, 255, 0.88);
-            --text-dark: #111462;
-            --text-muted: #4B5563;
-            --border-color: rgba(203, 216, 222, 0.8);
-            --font-main: 'Montserrat', sans-serif;
-            --Para replicar la composición de la imagen de referencia (estilo *mobile-first* con imagen de fondo prominente, paleta de tonos neutros/tierra y tarjetas flotantes) destacando a tu personaje femenino (Fer Rangel)[cite: 1, 2], te comparto la estructura en **HTML y CSS** responsivo. 
-
-Incluye efectos de **scroll (fade-in / slide-up)** mediante la API de *Intersection Observer* para que los elementos aparezcan suavemente conforme el usuario navega hacia abajo, replicando la interacción dinámica del enlace de referencia.
-
-### Código HTML + CSS + JavaScript
-
-```html
-<!DOCTYPE html>
-<html lang="es">
-<head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Diseño Mobile First - Personaje Femenino</title>
+  <title>Fernanda Rangel | Conciencia Financiera</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
   <style>
-    /* VARIABLES Y PALETA DE COLORES NEUTROS/TIERRA */
     :root {
-      --bg-color: #d6d1c7;
-      --card-bg: rgba(245, 243, 238, 0.9);
-      --text-main: #1f1f1f;
-      --text-secondary: #5c5953;
-      --accent-color: #3b4235;
-      --accent-text: #ffffff;
-      --font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
+      --navy-primary: #111462;
+      --bg-light: #E4ECEF;
+      --magenta-accent: #D938AD;
+      --card-bg: rgba(255, 255, 255, 0.88);
+      --text-dark: #111462;
+      --text-muted: #4B5563;
+      --border-color: rgba(203, 216, 222, 0.8);
+      --font-main: 'Montserrat', sans-serif;
     }
 
     * {
@@ -51,9 +27,9 @@ Incluye efectos de **scroll (fade-in / slide-up)** mediante la API de *Intersect
     }
 
     body {
-      background-color: var(--bg-color);
-      font-family: var(--font-family);
-      color: var(--text-main);
+      background-color: var(--bg-light);
+      font-family: var(--font-main);
+      color: var(--text-dark);
       display: flex;
       justify-content: center;
       align-items: center;
@@ -61,21 +37,20 @@ Incluye efectos de **scroll (fade-in / slide-up)** mediante la API de *Intersect
       padding: 20px 0;
     }
 
-    /* CONTENEDOR PRINCIPAL: Estilo mockup móvil en pantallas grandes */
+    /* CONTENEDOR MÓVIL PRINCIPAL (MOBILE-FIRST) */
     .mobile-container {
       width: 100%;
-      max-width: 430px; /* Tamaño tipo iPhone Pro Max */
-      min-height: 880px;
-      background-color: #e5e0d8;
-      border-radius: 40px;
+      max-width: 430px;
+      background-color: #FFFFFF;
+      border-radius: 36px;
       overflow: hidden;
-      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+      box-shadow: 0 25px 50px -12px rgba(17, 20, 98, 0.25);
       position: relative;
       display: flex;
       flex-direction: column;
     }
 
-    /* HERO SECTION CON IMAGEN DE FONDO */
+    /* HERO SECTION CON IMAGEN DE FONDO DESTACADA */
     .hero-section {
       position: relative;
       min-height: 580px;
@@ -83,12 +58,11 @@ Incluye efectos de **scroll (fade-in / slide-up)** mediante la API de *Intersect
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      /* Reemplaza la URL por la imagen final del personaje */
-      background: linear-gradient(180deg, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.3) 100%), 
-                  url('http://googleusercontent.com/image_generation_content/0_600') center/cover no-repeat;
+      background: linear-gradient(180deg, rgba(17,20,98,0.2) 0%, rgba(17,20,98,0.7) 100%), 
+                  url('https://i.postimg.cc/9XdcHMfR/8dc91c75-d5db-4c6f-bbe8-41b5400da9a6.jpg') center/cover no-repeat;
     }
 
-    /* ENCABEZADO Y MENÚ */
+    /* ENCABEZADO Y NAVEGACIÓN */
     .header {
       display: flex;
       justify-content: space-between;
@@ -97,16 +71,17 @@ Incluye efectos de **scroll (fade-in / slide-up)** mediante la API de *Intersect
     }
 
     .brand-logo {
-      font-size: 1.8rem;
+      font-size: 1.2rem;
       font-weight: 700;
-      letter-spacing: -0.5px;
-      color: var(--text-main);
+      letter-spacing: 1px;
+      color: #FFFFFF;
+      text-transform: uppercase;
     }
 
     .menu-btn {
-      background: rgba(255, 255, 255, 0.4);
+      background: rgba(255, 255, 255, 0.3);
       backdrop-filter: blur(8px);
-      border: none;
+      border: 1px solid rgba(255, 255, 255, 0.4);
       width: 44px;
       height: 44px;
       border-radius: 50%;
@@ -114,68 +89,93 @@ Incluye efectos de **scroll (fade-in / slide-up)** mediante la API de *Intersect
       align-items: center;
       justify-content: center;
       cursor: pointer;
+      color: #FFFFFF;
+      font-size: 1.2rem;
     }
 
-    /* CONTENIDO TIPOGRÁFICO SOBRE LA IMAGEN */
+    /* CONTENIDO TIPOGRÁFICO HERO */
     .hero-content {
       margin-top: auto;
       margin-bottom: 20px;
       z-index: 2;
     }
 
+    .hero-badge {
+      display: inline-block;
+      background: rgba(255, 255, 255, 0.25);
+      backdrop-filter: blur(6px);
+      color: #FFFFFF;
+      padding: 6px 14px;
+      border-radius: 20px;
+      font-size: 0.7rem;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      margin-bottom: 14px;
+      font-weight: 600;
+      border: 1px solid rgba(255, 255, 255, 0.4);
+    }
+
     .hero-title {
-      font-size: 2.3rem;
-      line-height: 1.1;
+      font-size: 2.1rem;
+      line-height: 1.15;
       font-weight: 700;
-      color: #ffffff;
-      text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+      color: #FFFFFF;
       margin-bottom: 12px;
     }
 
+    .hero-title span {
+      color: var(--magenta-accent);
+    }
+
     .hero-subtitle {
-      font-size: 0.95rem;
-      color: #f0f0f0;
+      font-size: 0.9rem;
+      color: #E4ECEF;
       line-height: 1.4;
       margin-bottom: 20px;
-      max-width: 85%;
     }
 
     .cta-button {
       display: inline-flex;
       align-items: center;
+      justify-content: center;
       gap: 10px;
-      background-color: var(--accent-color);
-      color: var(--accent-text);
-      padding: 12px 24px;
+      background-color: var(--magenta-accent);
+      color: #FFFFFF;
+      padding: 14px 28px;
       border-radius: 30px;
       text-decoration: none;
       font-weight: 600;
-      font-size: 0.95rem;
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      box-shadow: 0 4px 15px rgba(217, 56, 173, 0.4);
       transition: transform 0.2s ease;
+      width: 100%;
     }
 
     .cta-button:hover {
       transform: translateY(-2px);
     }
 
-    /* TARJETA INFERIOR SUPERPUESTA */
+    /* TARJETA FLOTANTE (GLASSMORPHISM) */
     .info-card {
       background-color: var(--card-bg);
       backdrop-filter: blur(12px);
-      border-radius: 28px;
-      padding: 24px;
-      margin: -20px 16px 20px 16px;
+      border-radius: 24px;
+      padding: 20px;
+      margin: -24px 16px 20px 16px;
       z-index: 3;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+      border: 1px solid var(--border-color);
+      box-shadow: 0 10px 25px rgba(17,20,98,0.08);
     }
 
     .features-grid {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
-      gap: 12px;
+      gap: 8px;
       text-align: center;
-      padding-bottom: 20px;
-      border-bottom: 1px solid rgba(0,0,0,0.08);
+      padding-bottom: 16px;
+      border-bottom: 1px solid var(--border-color);
     }
 
     .feature-item {
@@ -183,27 +183,27 @@ Incluye efectos de **scroll (fade-in / slide-up)** mediante la API de *Intersect
       flex-direction: column;
       align-items: center;
       gap: 6px;
-      font-size: 0.75rem;
+      font-size: 0.7rem;
       font-weight: 600;
-      color: var(--text-secondary);
+      color: var(--navy-primary);
     }
 
     .feature-icon {
       font-size: 1.2rem;
     }
 
-    /* SECCIÓN SOCIAL PROOF / TESTIMONIOS */
+    /* PRUEBA SOCIAL / TESTIMONIOS */
     .social-proof {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding-top: 16px;
+      padding-top: 14px;
     }
 
     .social-text {
       font-size: 0.8rem;
       font-weight: 700;
-      color: var(--text-main);
+      color: var(--navy-primary);
     }
 
     .avatar-group {
@@ -212,11 +212,11 @@ Incluye efectos de **scroll (fade-in / slide-up)** mediante la API de *Intersect
     }
 
     .avatar {
-      width: 32px;
-      height: 32px;
+      width: 30px;
+      height: 30px;
       border-radius: 50%;
-      border: 2px solid #fff;
-      margin-left: -10px;
+      border: 2px solid #FFFFFF;
+      margin-left: -8px;
       object-fit: cover;
     }
 
@@ -225,28 +225,42 @@ Incluye efectos de **scroll (fade-in / slide-up)** mediante la API de *Intersect
     }
 
     .badge {
-      background-color: #e2ded7;
-      padding: 6px 12px;
-      border-radius: 20px;
+      background-color: var(--bg-light);
+      color: var(--magenta-accent);
+      padding: 4px 10px;
+      border-radius: 16px;
       font-size: 0.75rem;
       font-weight: 700;
     }
 
-    /* SECCIÓN ADICIONAL PARA PROBAR EL EFFECTO DE SCROLL */
+    /* SECCIÓN DE CONTENIDO ADICIONAL */
     .scroll-section {
-      padding: 24px;
+      padding: 16px 20px 32px 20px;
       display: flex;
       flex-direction: column;
-      gap: 16px;
+      gap: 20px;
     }
 
     .content-block {
-      background-color: var(--card-bg);
+      background-color: var(--bg-light);
       padding: 20px;
       border-radius: 20px;
+      border: 1px solid var(--border-color);
     }
 
-    /* CLASES DE ANIMACIÓN AL HACER SCROLL (FRAMER STYLE) */
+    .content-block h3 {
+      font-size: 1.1rem;
+      color: var(--navy-primary);
+      margin-bottom: 8px;
+    }
+
+    .content-block p {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+
+    /* ANIMACIONES FRAMER/SHINTA STYLE (SCROLL REVEAL) */
     .reveal {
       opacity: 0;
       transform: translateY(30px);
@@ -258,14 +272,13 @@ Incluye efectos de **scroll (fade-in / slide-up)** mediante la API de *Intersect
       transform: translateY(0);
     }
 
-    /* ADAPTACIÓN PARA ESCRITORIO */
+    /* ADAPTACIÓN DESKTOP */
     @media (min-width: 1024px) {
       .mobile-container {
         max-width: 900px;
-        min-height: auto;
         display: grid;
         grid-template-columns: 1fr 1fr;
-        border-radius: 24px;
+        border-radius: 28px;
       }
 
       .hero-section {
@@ -279,7 +292,11 @@ Incluye efectos de **scroll (fade-in / slide-up)** mediante la API de *Intersect
 
       .features-grid {
         grid-template-columns: repeat(2, 1fr);
-        gap: 20px;
+        gap: 16px;
+      }
+
+      .scroll-section {
+        grid-column: span 2;
       }
     }
   </style>
@@ -287,55 +304,101 @@ Incluye efectos de **scroll (fade-in / slide-up)** mediante la API de *Intersect
 <body>
 
   <div class="mobile-container">
-    <!-- SECCIÓN HERO CON PERSONAJE DE FONDO -->
+    <!-- HERO SECTION CON PERSONAJE DE FONDO -->
     <div class="hero-section">
       <header class="header reveal">
-        <div class="brand-logo">Fer R.</div>
-        <button class="menu-btn" aria-label="Menu">☰</button>
+        <div class="brand-logo">Fernanda Rangel</div>
+        <button class="menu-btn" onclick="openContactModal()" aria-label="Menu">☰</button>
       </header>
 
       <div class="hero-content reveal">
-        <h1 class="hero-title">Liderazgo & Estrategia.</h1>
-        <p class="hero-subtitle">Soluciones ejecutivas de alto impacto diseñadas a la medida de tu empresa.</p>
-        <a href="#contacto" class="cta-button">
-          Agendar Cita <span>→</span>
-        </a>
+        <span class="hero-badge">Conciencia Financiera</span>
+        <h1 class="hero-title">Construye el mañana <span>que mereces</span></h1>
+        <p class="hero-subtitle">Retirarte con dignidad y autonomía garantizando tranquilidad para ti y tu familia.</p>
+        <a href="#contacto" class="cta-button" onclick="openContactModal()">Proyectar mi retiro ➔</a>
       </div>
     </div>
 
-    <!-- TARJETA FLOTANTE DE INFORMACIÓN -->
+    <!-- TARJETA FLOTANTE GLASSMORPHISM -->
     <div class="info-card reveal">
       <div class="features-grid">
         <div class="feature-item">
           <span class="feature-icon">🛡️</span>
-          <span>Estrategia</span>
+          <span>Retiro</span>
         </div>
         <div class="feature-item">
           <span class="feature-icon">📈</span>
-          <span>Crecimiento</span>
+          <span>Inversión</span>
         </div>
         <div class="feature-item">
           <span class="feature-icon">✨</span>
-          <span>Innovación</span>
+          <span>Salud</span>
         </div>
         <div class="feature-item">
-          <span class="feature-icon">🔄</span>
-          <span>Asesoría</span>
+          <span class="feature-icon">🎓</span>
+          <span>Educación</span>
         </div>
       </div>
 
       <div class="social-proof">
         <div>
-          <p class="social-text">Más de 2K+</p>
-          <p style="font-size: 0.7rem; color: var(--text-secondary);">Proyectos dirigidos</p>
+          <p class="social-text">Acompañamiento 1 a 1</p>
+          <p style="font-size: 0.7rem; color: var(--text-muted);">Estrategias claras</p>
         </div>
         <div class="avatar-group">
-          <img class="avatar" src="http://googleusercontent.com/image_generation_content/1_582" alt="Avatar 1">
-          <img class="avatar" src="http://googleusercontent.com/image_generation_content/2_588" alt="Avatar 2">
-          <img class="avatar" src="http://googleusercontent.com/image_generation_content/4_592" alt="Avatar 3">
+          <img class="avatar" src="https://i.postimg.cc/QNQjZtMK/bb5e4076-9e8a-45a2-a617-a1438bb921bb.jpg" alt="Fer Rangel">
+          <img class="avatar" src="https://plus.unsplash.com/premium_photo-1690395794791-e85944b25c0f?q=80&w=200" alt="Cliente">
+          <img class="avatar" src="https://plus.unsplash.com/premium_photo-1690294614341-cf346ba0a637?q=80&w=200" alt="Cliente">
         </div>
-        <span class="badge">4.9 ★</span>
+        <span class="badge">100% Personalizado</span>
       </div>
     </div>
 
-    <!-- SECCIÓN EXTRA PARA MOSTRAR ANIMACIONES DE SCROLL -->
+    <!-- SECCIÓN DE CONTENIDO PANDAWAY/SHINTA STYLE -->
+    <div class="scroll-section">
+      <div class="content-block reveal">
+        <h3>Sanar el linaje, proteger la descendencia</h3>
+        <p>
+          Diseñar tu retiro es un acto de amor profundo. Te permite mantener tu autonomía en la madurez, disfrutar de tu historia y permitir que tus seres queridos sigan construyendo su camino.
+        </p>
+      </div>
+
+      <div class="content-block reveal">
+        <h3>Kit de Retiro para Emprendedores</h3>
+        <p>
+          Ahorro flexible y adaptable a tus flujos de ingreso, creando tu propia Afore privada con beneficios de deducibilidad de impuestos.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- INTERSECTION OBSERVER SCRIPT (REVEAL ON SCROLL) -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const observerOptions = {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.15
+      };
+
+      const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach((entry, index) => {
+          if (entry.isIntersecting) {
+            setTimeout(() => {
+              entry.target.classList.add('active');
+            }, index * 100);
+            observer.unobserve(entry.target);
+          }
+        });
+      }, observerOptions);
+
+      const revealElements = document.querySelectorAll('.reveal');
+      revealElements.forEach(el => observer.observe(el));
+    });
+
+    function openContactModal() {
+      alert("¡Gracias por visitar! Conéctate directamente con Fer Rangel para agendar tu asesoría.");
+    }
+  </script>
+</body>
+</html>
