@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fernanda Rangel | Conciencia Financiera</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            /* Paleta Oficial */
+            --navy-primary: #111462;
+            --bg-light: #E4ECEF;
+            --magenta-accent: #D938AD;
+            --card-bg: rgba(255, 255, 255, 0.88);
+            --text-dark: #111462;
+            --text-muted: #4B5563;
+            --border-color: rgba(203, 216, 222, 0.8);
+            --font-main: 'Montserrat', sans-serif;
+            --Para replicar la composición de la imagen de referencia (estilo *mobile-first* con imagen de fondo prominente, paleta de tonos neutros/tierra y tarjetas flotantes) destacando a tu personaje femenino (Fer Rangel)[cite: 1, 2], te comparto la estructura en **HTML y CSS** responsivo. 
+
+Incluye efectos de **scroll (fade-in / slide-up)** mediante la API de *Intersection Observer* para que los elementos aparezcan suavemente conforme el usuario navega hacia abajo, replicando la interacción dinámica del enlace de referencia.
+
+### Código HTML + CSS + JavaScript
+
+```html
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Diseño Mobile First - Personaje Femenino</title>
+  <style>
+    /* VARIABLES Y PALETA DE COLORES NEUTROS/TIERRA */
+    :root {
+      --bg-color: #d6d1c7;
+      --card-bg: rgba(245, 243, 238, 0.9);
+      --text-main: #1f1f1f;
+      --text-secondary: #5c5953;
+      --accent-color: #3b4235;
+      --accent-text: #ffffff;
+      --font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: var(--bg-color);
+      font-family: var(--font-family);
+      color: var(--text-main);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      padding: 20px 0;
+    }
+
+    /* CONTENEDOR PRINCIPAL: Estilo mockup móvil en pantallas grandes */
+    .mobile-container {
+      width: 100%;
+      max-width: 430px; /* Tamaño tipo iPhone Pro Max */
+      min-height: 880px;
+      background-color: #e5e0d8;
+      border-radius: 40px;
+      overflow: hidden;
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+      position: relative;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* HERO SECTION CON IMAGEN DE FONDO */
+    .hero-section {
+      position: relative;
+      min-height: 580px;
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      /* Reemplaza la URL por la imagen final del personaje */
+      background: linear-gradient(180deg, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.3) 100%), 
+                  url('http://googleusercontent.com/image_generation_content/0_600') center/cover no-repeat;
+    }
+
+    /* ENCABEZADO Y MENÚ */
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 2;
+    }
+
+    .brand-logo {
+      font-size: 1.8rem;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+      color: var(--text-main);
+    }
+
+    .menu-btn {
+      background: rgba(255, 255, 255, 0.4);
+      backdrop-filter: blur(8px);
+      border: none;
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+    }
+
+    /* CONTENIDO TIPOGRÁFICO SOBRE LA IMAGEN */
+    .hero-content {
+      margin-top: auto;
+      margin-bottom: 20px;
+      z-index: 2;
+    }
+
+    .hero-title {
+      font-size: 2.3rem;
+      line-height: 1.1;
+      font-weight: 700;
+      color: #ffffff;
+      text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+      margin-bottom: 12px;
+    }
+
+    .hero-subtitle {
+      font-size: 0.95rem;
+      color: #f0f0f0;
+      line-height: 1.4;
+      margin-bottom: 20px;
+      max-width: 85%;
+    }
+
+    .cta-button {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background-color: var(--accent-color);
+      color: var(--accent-text);
+      padding: 12px 24px;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.95rem;
+      transition: transform 0.2s ease;
+    }
+
+    .cta-button:hover {
+      transform: translateY(-2px);
+    }
+
+    /* TARJETA INFERIOR SUPERPUESTA */
+    .info-card {
+      background-color: var(--card-bg);
+      backdrop-filter: blur(12px);
+      border-radius: 28px;
+      padding: 24px;
+      margin: -20px 16px 20px 16px;
+      z-index: 3;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+    }
+
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+      text-align: center;
+      padding-bottom: 20px;
+      border-bottom: 1px solid rgba(0,0,0,0.08);
+    }
+
+    .feature-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: var(--text-secondary);
+    }
+
+    .feature-icon {
+      font-size: 1.2rem;
+    }
+
+    /* SECCIÓN SOCIAL PROOF / TESTIMONIOS */
+    .social-proof {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-top: 16px;
+    }
+
+    .social-text {
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: var(--text-main);
+    }
+
+    .avatar-group {
+      display: flex;
+      align-items: center;
+    }
+
+    .avatar {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      border: 2px solid #fff;
+      margin-left: -10px;
+      object-fit: cover;
+    }
+
+    .avatar:first-child {
+      margin-left: 0;
+    }
+
+    .badge {
+      background-color: #e2ded7;
+      padding: 6px 12px;
+      border-radius: 20px;
+      font-size: 0.75rem;
+      font-weight: 700;
+    }
+
+    /* SECCIÓN ADICIONAL PARA PROBAR EL EFFECTO DE SCROLL */
+    .scroll-section {
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .content-block {
+      background-color: var(--card-bg);
+      padding: 20px;
+      border-radius: 20px;
+    }
+
+    /* CLASES DE ANIMACIÓN AL HACER SCROLL (FRAMER STYLE) */
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+
+    .reveal.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ADAPTACIÓN PARA ESCRITORIO */
+    @media (min-width: 1024px) {
+      .mobile-container {
+        max-width: 900px;
+        min-height: auto;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        border-radius: 24px;
+      }
+
+      .hero-section {
+        min-height: 650px;
+      }
+
+      .info-card {
+        margin: 24px;
+        align-self: center;
+      }
+
+      .features-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="mobile-container">
+    <!-- SECCIÓN HERO CON PERSONAJE DE FONDO -->
+    <div class="hero-section">
+      <header class="header reveal">
+        <div class="brand-logo">Fer R.</div>
+        <button class="menu-btn" aria-label="Menu">☰</button>
+      </header>
+
+      <div class="hero-content reveal">
+        <h1 class="hero-title">Liderazgo & Estrategia.</h1>
+        <p class="hero-subtitle">Soluciones ejecutivas de alto impacto diseñadas a la medida de tu empresa.</p>
+        <a href="#contacto" class="cta-button">
+          Agendar Cita <span>→</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- TARJETA FLOTANTE DE INFORMACIÓN -->
+    <div class="info-card reveal">
+      <div class="features-grid">
+        <div class="feature-item">
+          <span class="feature-icon">🛡️</span>
+          <span>Estrategia</span>
+        </div>
+        <div class="feature-item">
+          <span class="feature-icon">📈</span>
+          <span>Crecimiento</span>
+        </div>
+        <div class="feature-item">
+          <span class="feature-icon">✨</span>
+          <span>Innovación</span>
+        </div>
+        <div class="feature-item">
+          <span class="feature-icon">🔄</span>
+          <span>Asesoría</span>
+        </div>
+      </div>
+
+      <div class="social-proof">
+        <div>
+          <p class="social-text">Más de 2K+</p>
+          <p style="font-size: 0.7rem; color: var(--text-secondary);">Proyectos dirigidos</p>
+        </div>
+        <div class="avatar-group">
+          <img class="avatar" src="http://googleusercontent.com/image_generation_content/1_582" alt="Avatar 1">
+          <img class="avatar" src="http://googleusercontent.com/image_generation_content/2_588" alt="Avatar 2">
+          <img class="avatar" src="http://googleusercontent.com/image_generation_content/4_592" alt="Avatar 3">
+        </div>
+        <span class="badge">4.9 ★</span>
+      </div>
+    </div>
+
+    <!-- SECCIÓN EXTRA PARA MOSTRAR ANIMACIONES DE SCROLL -->
