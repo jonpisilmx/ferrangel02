@@ -35,7 +35,7 @@
       justify-content: center;
       align-items: center;
       min-height: 100vh;
-      padding: 20px 0;
+      padding: 60px 0 20px 0; /* Espacio extra superior para la mitad del logo que sobresale */
       overflow-x: hidden;
     }
 
@@ -45,7 +45,6 @@
       max-width: 430px;
       background-color: #FFFFFF;
       border-radius: 36px;
-      overflow: hidden;
       box-shadow: 0 25px 50px -12px rgba(17, 20, 98, 0.25);
       position: relative;
       display: flex;
@@ -53,17 +52,46 @@
       transition: max-width 0.3s ease, border-radius 0.3s ease;
     }
 
+    /* CONTENEDOR CIRCULAR DEL LOGO SOBRESALIENTE */
+    .header-logo-container {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translate(-50%, -50%); /* Posiciona 50% afuera y 50% adentro */
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      background-color: #FFFFFF;
+      border: 3px solid var(--magenta-accent);
+      box-shadow: 0 8px 20px rgba(17, 20, 98, 0.25);
+      z-index: 20;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .header-logo-container img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
     /* HERO SECTION CON PERSONAJE DE FONDO DINÁMICO */
     .hero-section {
       position: relative;
       min-height: 580px;
       padding: 24px;
+      padding-top: 60px; /* Margen para dar espacio al logo interno */
       display: flex;
       flex-direction: column;
       justify-content: space-between;
       background-position: center;
       background-size: cover;
       background-repeat: no-repeat;
+      border-radius: 36px 36px 0 0;
+      overflow: hidden;
       transition: background-image 0.4s ease-in-out;
     }
 
@@ -634,6 +662,7 @@
       border-top: 1px solid var(--border-color);
       background: rgba(228, 236, 239, 0.9);
       font-weight: 500;
+      border-radius: 0 0 36px 36px;
     }
 
     /* MODAL CONTACTO */
@@ -696,9 +725,16 @@
         flex-direction: column;
       }
 
+      .header-logo-container {
+        width: 120px;
+        height: 120px;
+      }
+
       .hero-section {
         min-height: 520px;
         padding: 40px;
+        padding-top: 70px;
+        border-radius: 28px 28px 0 0;
       }
 
       .hero-title {
@@ -776,12 +812,21 @@
         width: 140px;
         height: 140px;
       }
+
+      footer {
+        border-radius: 0 0 28px 28px;
+      }
     }
   </style>
 </head>
 <body>
 
   <div class="mobile-container">
+    <!-- CONTENEDOR CIRCULAR DEL LOGO QUE SOBRESALE DEL TOP DEL CARRUSEL DE IMÁGENES -->
+    <div class="header-logo-container">
+      <img src="https://i.ibb.co/gFy2Tb0M/logofer.jpg" alt="Logo Fernanda Rangel">
+    </div>
+
     <!-- HERO SECTION CON PERSONAJE DE FONDO ALEATORIO -->
     <div class="hero-section" id="heroSection">
       <header class="header reveal">
@@ -866,7 +911,7 @@
 
       <!-- SECCIÓN QUÉ QUIERES CONSTRUIR -->
       <div class="entrepreneur-card reveal">
-        <img id="entrepreneurAvatar" src="https://i.ibb.co/BXm9zTF/carrusel01.jpg" alt="Fer Rangel" class="entrepreneur-avatar-top">
+        <img id="entrepreneurAvatar" src="https://i.ibb.co/twKwDFqt/MG-8999.jpg" alt="Fer Rangel" class="entrepreneur-avatar-top">
         <span class="entrepreneur-badge">Planificación a tu medida</span>
         <h3>¿QUÉ QUIERES CONSTRUIR?</h3>
 
@@ -1060,7 +1105,7 @@
 
   <!-- SCRIPTS FUNCIONALES -->
   <script>
-    // Nuevos enlaces de imágenes de la cabecera / carrusel para rotación aleatoria
+    // Enlaces de imágenes para rotación aleatoria
     const ferImages = [
       'https://i.ibb.co/BXm9zTF/carrusel01.jpg',
       'https://i.ibb.co/Sw98t93g/carrusel02.jpg',
