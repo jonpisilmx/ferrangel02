@@ -136,16 +136,12 @@
     }
 
     .hero-title {
-      font-size: 2.1rem;
-      line-height: 1.15;
+      font-size: 1.8rem;
+      line-height: 1.2;
       font-weight: 700;
       color: #FFFFFF;
       margin-bottom: 12px;
       text-shadow: 0 2px 6px rgba(0,0,0,0.5);
-    }
-
-    .hero-title span {
-      color: var(--magenta-accent);
     }
 
     .hero-subtitle {
@@ -195,8 +191,8 @@
 
     .features-grid {
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 8px;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 4px;
       text-align: center;
       padding-bottom: 16px;
       border-bottom: 1px solid var(--border-color);
@@ -206,14 +202,10 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 6px;
-      font-size: 0.68rem;
+      justify-content: center;
+      font-size: 0.65rem;
       font-weight: 600;
       color: var(--navy-primary);
-    }
-
-    .feature-icon {
-      font-size: 1.2rem;
     }
 
     .social-proof {
@@ -224,7 +216,7 @@
     }
 
     .social-text {
-      font-size: 0.8rem;
+      font-size: 0.75rem;
       font-weight: 700;
       color: var(--navy-primary);
     }
@@ -250,9 +242,9 @@
     .badge {
       background-color: var(--bg-light);
       color: var(--magenta-accent);
-      padding: 4px 10px;
+      padding: 4px 8px;
       border-radius: 16px;
-      font-size: 0.72rem;
+      font-size: 0.68rem;
       font-weight: 700;
     }
 
@@ -284,7 +276,7 @@
       line-height: 1.5;
     }
 
-    /* EMPRENDEDORES & CREADORES */
+    /* SECCIÓN QUÉ QUIERES CONSTRUIR */
     .entrepreneur-card {
       background: var(--navy-primary);
       color: #FFFFFF;
@@ -324,16 +316,11 @@
     }
 
     .entrepreneur-card h3 {
-      font-size: 1.15rem;
+      font-size: 1.2rem;
       color: #FFFFFF;
-      margin-bottom: 10px;
+      margin-bottom: 16px;
       text-align: center;
-    }
-
-    .entrepreneur-card p {
-      font-size: 0.85rem;
-      color: #CBD8DE;
-      margin-bottom: 18px;
+      letter-spacing: 1px;
     }
 
     .kit-feature-card {
@@ -345,15 +332,47 @@
     }
 
     .kit-feature-card h4 {
-      font-size: 0.95rem;
+      font-size: 0.92rem;
       color: var(--magenta-accent);
       margin-bottom: 4px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
     }
 
     .kit-feature-card p {
       font-size: 0.8rem;
       color: #E4ECEF;
       margin-bottom: 0;
+      line-height: 1.4;
+    }
+
+    /* MI MÉTODO */
+    .method-steps {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-top: 14px;
+    }
+
+    .method-step {
+      background: rgba(17, 20, 98, 0.03);
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      padding: 12px 14px;
+    }
+
+    .method-step-title {
+      font-weight: 700;
+      color: var(--magenta-accent);
+      font-size: 0.85rem;
+      margin-bottom: 2px;
+    }
+
+    .method-step-text {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      line-height: 1.4;
     }
 
     /* CALCULADORA DE RETIRO */
@@ -388,6 +407,16 @@
       font-size: 0.9rem;
       color: var(--navy-primary);
       outline: none;
+    }
+
+    select.form-control {
+      appearance: none;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      background-image: url("data:image/svg+xml;utf8,<svg fill='%23111462' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/></svg>");
+      background-repeat: no-repeat;
+      background-position: right 10px center;
+      cursor: pointer;
     }
 
     .radio-group {
@@ -589,8 +618,8 @@
       }
 
       .features-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 12px;
+        grid-template-columns: repeat(5, 1fr);
+        gap: 8px;
       }
 
       .scroll-section {
@@ -614,10 +643,10 @@
       </header>
 
       <div class="hero-content reveal">
-        <span class="hero-badge">El arte de honrar tu futuro</span>
-        <h1 class="hero-title">Construye el mañana <span>que mereces</span></h1>
-        <p class="hero-subtitle">Retirarte con dignidad y autonomía no es solo un plan financiero; es la decisión consciente de mantener tu lugar sagrado en la familia.</p>
-        <button class="btn" onclick="openContactModal()">Proyectar mi retiro ➔</button>
+        <span class="hero-badge">Conciencia Financiera</span>
+        <h1 class="hero-title">Tu dinero también puede tener propósito</h1>
+        <p class="hero-subtitle">Te ayudo a tomar decisiones más conscientes para proteger lo que tienes, construir lo que quieres y vivir más tranquila.</p>
+        <button class="btn" onclick="openContactModal('ppr')">Quiero una asesoría ➔</button>
       </div>
     </div>
 
@@ -625,71 +654,91 @@
     <div class="info-card reveal">
       <div class="features-grid">
         <div class="feature-item">
-          <span class="feature-icon">🛡️</span>
-          <span>Retiro (PPR)</span>
+          <span>Retiro</span>
         </div>
         <div class="feature-item">
-          <span class="feature-icon">📈</span>
           <span>Ahorro</span>
         </div>
         <div class="feature-item">
-          <span class="feature-icon">✨</span>
-          <span>Salud (GMM)</span>
+          <span>Salud</span>
         </div>
         <div class="feature-item">
-          <span class="feature-icon">🎓</span>
           <span>Educación</span>
+        </div>
+        <div class="feature-item">
+          <span>Protección</span>
         </div>
       </div>
 
       <div class="social-proof">
         <div>
-          <p class="social-text">Acompañamiento 1 a 1</p>
-          <p style="font-size: 0.7rem; color: var(--text-muted);">Estrategias claras y humanas</p>
+          <p class="social-text">Agente de seguros desde 2017</p>
+          <p style="font-size: 0.7rem; color: var(--text-muted);">MDRT · Asesoría personalizada</p>
         </div>
         <div class="avatar-group">
           <img class="avatar" id="avatarFer" src="" alt="Fer Rangel">
           <img class="avatar" src="https://plus.unsplash.com/premium_photo-1690395794791-e85944b25c0f?q=80&w=200" alt="Cliente">
           <img class="avatar" src="https://plus.unsplash.com/premium_photo-1690294614341-cf346ba0a637?q=80&w=200" alt="Cliente">
         </div>
-        <span class="badge">100% Personalizado</span>
+        <span class="badge">Fer Rangel</span>
       </div>
     </div>
 
     <!-- SECCIÓN DE CONTENIDO INTEGRAL -->
     <div class="scroll-section">
       
-      <!-- NARRATIVA FAMILIAR -->
+      <!-- NARRATIVA FAMILIAR/LINAJE -->
       <div class="content-block reveal">
         <h3>Sanar el linaje, proteger la descendencia</h3>
-        <p>
-          En el orden familiar, cada integrante sostiene un lugar. Con los años, a veces cometemos el error involuntario de trasladar la carga financiera de la vejez a nuestros hijos. Diseñar tu retiro es un acto de amor profundo que mantiene tu libertad sin incertidumbres.
+        <p style="margin-bottom: 12px;">
+          Nuestra relación con el dinero también se hereda: creencias, miedos y patrones que muchas veces repetimos sin darnos cuenta.
+        </p>
+        <p style="margin-bottom: 12px;">
+          <strong>Sanar el linaje</strong> es elegir qué dejamos de repetir.<br>
+          <strong>Proteger la descendencia</strong> es decidir qué queremos empezar a construir.
+        </p>
+        <p style="color: var(--navy-primary); font-weight: 600;">
+          Porque la conciencia financiera no es solo dinero. Es transformar nuestra historia y la de quienes vienen después.
         </p>
       </div>
 
-      <!-- SECCIÓN ESPECIAL PARA EMPRENDEDORES & CREADORES -->
+      <!-- SECCIÓN QUÉ QUIERES CONSTRUIR -->
       <div class="entrepreneur-card reveal">
-        <img id="entrepreneurAvatar" src="" alt="Fer Rangel" class="entrepreneur-avatar-top">
-        <span class="entrepreneur-badge">Independientes & Creadores</span>
-        <h3>Ayudo a emprendedores a construir su propio retiro sin depender de un empleo tradicional</h3>
-        <p>Cuando emprendes no hay jefes ni Afore institucional. Eres el motor de tu proyecto, pero tu futuro no debe quedar a la deriva.</p>
+        <img id="entrepreneurAvatar" src="https://i.ibb.co/twKwDFqt/MG-8999.jpg" alt="Fer Rangel" class="entrepreneur-avatar-top">
+        <span class="entrepreneur-badge">Planificación a tu medida</span>
+        <h3>¿QUÉ QUIERES CONSTRUIR?</h3>
 
         <div class="kit-feature-card">
-          <h4>Ahorro Flexible y Adaptable</h4>
-          <p>Aportaciones dinámicas diseñadas para meses de altos ingresos y flexibilidad para períodos de reinversión.</p>
+          <h4>🧓 Quiero preparar mi retiro</h4>
+          <p>Construir patrimonio para que tu futuro no dependa de nadie.</p>
         </div>
 
         <div class="kit-feature-card">
-          <h4>Tu Propia "Afore" Privada</h4>
-          <p>Construye un fondo de retiro estructurado e independiente del éxito a corto plazo de tu negocio.</p>
+          <h4>💰 Quiero empezar a ahorrar</h4>
+          <p>Crear una estrategia que tenga sentido para tus metas.</p>
         </div>
 
         <div class="kit-feature-card">
-          <h4>Deducibilidad de Impuestos</h4>
-          <p>Optimiza tus declaraciones fiscales anuales deduciendo tus aportaciones.</p>
+          <h4>🎓 Quiero asegurar la educación de mis hijos</h4>
+          <p>Construir desde hoy una parte de su futuro.</p>
         </div>
 
-        <button class="btn" style="margin-top: 10px;" onclick="openContactModal('Kit para Emprendedores')">Diseñar mi Kit Independiente</button>
+        <div class="kit-feature-card">
+          <h4>🩺 Quiero proteger mi salud</h4>
+          <p>Tener respaldo financiero ante un imprevisto médico.</p>
+        </div>
+
+        <div class="kit-feature-card">
+          <h4>🛡️ Quiero proteger a mi familia</h4>
+          <p>Que quienes amas estén respaldados aun cuando la vida cambie.</p>
+        </div>
+
+        <div class="kit-feature-card">
+          <h4>🏢 Soy empresaria/o</h4>
+          <p>Protección, retiro y estrategias para tu negocio.</p>
+        </div>
+
+        <button class="btn" style="margin-top: 10px;" onclick="openContactModal('estrategias_fiscales_hombre_clave')">DISEÑA TU KIT</button>
       </div>
 
       <!-- CALCULADORA DE RETIROS FUNCIONAL -->
@@ -725,7 +774,35 @@
           <div class="result-title">Proyección a tus 65 años</div>
           <div class="result-amount" id="totalResult">$0</div>
           <p class="result-note" id="resultExplanation">Esta cifra representa la reserva estimada que respaldará tu calidad de vida.</p>
-          <button class="btn" onclick="openContactModal('Consulta de Resultado Calculadora')">Platicar este resultado con Fer</button>
+          <button class="btn" onclick="openContactModal('ppr')">Platicar este resultado con Fer</button>
+        </div>
+      </div>
+
+      <!-- EL MÉTODO DE FER -->
+      <div class="content-block reveal">
+        <h3>Mi método</h3>
+        <p style="font-weight: 500; color: var(--navy-primary); margin-bottom: 8px;">No tienes que saber de seguros para empezar.</p>
+        
+        <div class="method-steps">
+          <div class="method-step">
+            <div class="method-step-title">1. Platicamos</div>
+            <div class="method-step-text">Me cuentas dónde estás y qué quieres lograr.</div>
+          </div>
+          
+          <div class="method-step">
+            <div class="method-step-title">2. Diseñamos</div>
+            <div class="method-step-text">Revisamos alternativas y números reales.</div>
+          </div>
+
+          <div class="method-step">
+            <div class="method-step-title">3. Tú decides</div>
+            <div class="method-step-text">Sin presión y entendiendo perfectamente qué estás contratando.</div>
+          </div>
+
+          <div class="method-step">
+            <div class="method-step-title">4. Te acompaño</div>
+            <div class="method-step-text">Mi trabajo no termina cuando se emite tu póliza.</div>
+          </div>
         </div>
       </div>
 
@@ -787,16 +864,23 @@
       </p>
       <form onsubmit="handleFormSubmit(event)">
         <div class="form-group">
-          <label>Tu nombre</label>
-          <input type="text" class="form-control" required placeholder="Escribe tu nombre">
+          <label for="userName">Tu nombre</label>
+          <input type="text" id="userName" class="form-control" required placeholder="Escribe tu nombre">
         </div>
         <div class="form-group">
-          <label>Correo electrónico o WhatsApp</label>
-          <input type="text" class="form-control" required placeholder="¿Cómo preferirías que te contacte?">
+          <label for="userContact">Correo electrónico o WhatsApp</label>
+          <input type="text" id="userContact" class="form-control" required placeholder="¿Cómo preferirías que te contacte?">
         </div>
         <div class="form-group">
-          <label>Tema principal de interés</label>
-          <input type="text" id="modalTopic" class="form-control" value="Retiro e Independencia Financiera">
+          <label for="tema_interes">TEMA PRINCIPAL DE INTERÉS:</label>
+          <select id="tema_interes" name="tema_interes" class="form-control" required>
+            <option value="" disabled selected>Selecciona una opción...</option>
+            <option value="ppr">PPR</option>
+            <option value="seguro_vida_invalidez">Seguro de vida e invalidez</option>
+            <option value="gastos_medicos_mayores">Gastos médicos mayores</option>
+            <option value="seguro_educativo">Seguro educativo</option>
+            <option value="estrategias_fiscales_hombre_clave">Estrategias fiscales (Hombre clave)</option>
+          </select>
         </div>
         <button type="submit" class="btn">Agendar mi sesión</button>
       </form>
@@ -805,7 +889,7 @@
 
   <!-- SCRIPTS FUNCIONALES -->
   <script>
-    // Enlaces actualizados de las cuatro imágenes corregidas
+    // Enlaces de las cuatro imágenes para carga aleatoria en Hero y Avatares
     const ferImages = [
       'https://i.ibb.co/XZ6gVW2W/IMG-8763.jpg',
       'https://i.ibb.co/p6yrfZqb/IMG-8567.jpg',
@@ -813,7 +897,6 @@
       'https://i.ibb.co/6cWSqwYR/IMG-8661.jpg'
     ];
 
-    // Función para obtener una imagen aleatoria del listado
     function getRandomImage() {
       const randomIndex = Math.floor(Math.random() * ferImages.length);
       return ferImages[randomIndex];
@@ -825,9 +908,8 @@
       const randomHeroImg = getRandomImage();
       heroSection.style.backgroundImage = `linear-gradient(180deg, rgba(17,20,98,0.25) 0%, rgba(17,20,98,0.75) 100%), url('${randomHeroImg}')`;
 
-      // 2. Asignar imágenes aleatorias a las secciones secundarias
+      // 2. Asignar imágenes aleatorias a avatares secundarios
       document.getElementById('avatarFer').src = getRandomImage();
-      document.getElementById('entrepreneurAvatar').src = getRandomImage();
       document.getElementById('aboutPhoto').src = getRandomImage();
 
       // 3. Intersection Observer bidireccional (scroll reveal y fade out)
@@ -891,8 +973,11 @@
       }
     }
 
-    function openContactModal(topic = 'Retiro e Independencia Financiera') {
-      document.getElementById('modalTopic').value = topic;
+    function openContactModal(selectedOption = '') {
+      const selectElement = document.getElementById('tema_interes');
+      if (selectedOption) {
+        selectElement.value = selectedOption;
+      }
       document.getElementById('contactModal').style.display = 'flex';
     }
 
