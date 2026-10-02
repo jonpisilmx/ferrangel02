@@ -189,23 +189,49 @@
       box-shadow: 0 10px 25px rgba(17,20,98,0.08);
     }
 
-    .features-grid {
-      display: grid;
-      grid-template-columns: repeat(5, 1fr);
-      gap: 4px;
-      text-align: center;
+    /* CINTA DE TEXTO EN CONTINUO SCROLL AUTOMÁTICO */
+    .ticker-wrapper {
+      width: 100%;
+      overflow: hidden;
+      white-space: nowrap;
       padding-bottom: 16px;
       border-bottom: 1px solid var(--border-color);
+      position: relative;
     }
 
-    .feature-item {
-      display: flex;
-      flex-direction: column;
+    .ticker-track {
+      display: inline-flex;
       align-items: center;
-      justify-content: center;
-      font-size: 0.65rem;
-      font-weight: 600;
+      animation: marquee 35s linear infinite;
+    }
+
+    .ticker-item {
+      display: inline-flex;
+      align-items: center;
+      font-size: 0.78rem;
       color: var(--navy-primary);
+      padding: 0 12px;
+    }
+
+    .ticker-item strong {
+      color: var(--magenta-accent);
+      font-weight: 700;
+      margin-right: 4px;
+    }
+
+    .ticker-separator {
+      margin: 0 10px;
+      opacity: 0.4;
+      font-size: 0.7rem;
+    }
+
+    @keyframes marquee {
+      0% {
+        transform: translateX(0%);
+      }
+      100% {
+        transform: translateX(-50%);
+      }
     }
 
     .social-proof {
@@ -500,7 +526,7 @@
 
     .carousel-slide {
       min-width: 100%;
-      box-sizing: border-radius;
+      box-sizing: border-box;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -676,11 +702,6 @@
         align-self: center;
       }
 
-      .features-grid {
-        grid-template-columns: repeat(5, 1fr);
-        gap: 8px;
-      }
-
       .scroll-section {
         grid-column: span 2;
         padding: 24px 32px;
@@ -711,21 +732,33 @@
 
     <!-- TARJETA FLOTANTE GLASSMORPHISM -->
     <div class="info-card reveal">
-      <div class="features-grid">
-        <div class="feature-item">
-          <span>Retiro</span>
-        </div>
-        <div class="feature-item">
-          <span>Ahorro</span>
-        </div>
-        <div class="feature-item">
-          <span>Salud</span>
-        </div>
-        <div class="feature-item">
-          <span>Educación</span>
-        </div>
-        <div class="feature-item">
-          <span>Protección</span>
+      
+      <!-- CINTA EN CONTINUO SCROLL AUTOMÁTICO HORIZONAL -->
+      <div class="ticker-wrapper">
+        <div class="ticker-track">
+          <!-- Bloque de conceptos 1 -->
+          <div class="ticker-item"><strong>Retiro:</strong> garantiza un estilo de vida y tu libertad financiera.</div>
+          <span class="ticker-separator">✦</span>
+          <div class="ticker-item"><strong>Ahorro:</strong> Haz crecer tu patrimonio con un objetivo claro en un plazo específico.</div>
+          <span class="ticker-separator">✦</span>
+          <div class="ticker-item"><strong>Salud:</strong> Protege lo más valioso, la salud propia y la de los tuyos.</div>
+          <span class="ticker-separator">✦</span>
+          <div class="ticker-item"><strong>Educación:</strong> asegura que sin importar las circunstacias, el futuro educativo de tus hijos sea una realidad.</div>
+          <span class="ticker-separator">✦</span>
+          <div class="ticker-item"><strong>Protección:</strong> Blinda el patrimonio, protegiendo bienes de alto valor.</div>
+          <span class="ticker-separator">✦</span>
+
+          <!-- Bloque duplicado para bucle continuo fluído -->
+          <div class="ticker-item"><strong>Retiro:</strong> garantiza un estilo de vida y tu libertad financiera.</div>
+          <span class="ticker-separator">✦</span>
+          <div class="ticker-item"><strong>Ahorro:</strong> Haz crecer tu patrimonio con un objetivo claro en un plazo específico.</div>
+          <span class="ticker-separator">✦</span>
+          <div class="ticker-item"><strong>Salud:</strong> Protege lo más valioso, la salud propia y la de los tuyos.</div>
+          <span class="ticker-separator">✦</span>
+          <div class="ticker-item"><strong>Educación:</strong> asegura que sin importar las circunstacias, el futuro educativo de tus hijos sea una realidad.</div>
+          <span class="ticker-separator">✦</span>
+          <div class="ticker-item"><strong>Protección:</strong> Blinda el patrimonio, protegiendo bienes de alto valor.</div>
+          <span class="ticker-separator">✦</span>
         </div>
       </div>
 
