@@ -50,6 +50,7 @@
       position: relative;
       display: flex;
       flex-direction: column;
+      transition: max-width 0.3s ease, border-radius 0.3s ease;
     }
 
     /* HERO SECTION CON PERSONAJE DE FONDO DINÁMICO */
@@ -684,27 +685,96 @@
       transform: translateY(0);
     }
 
-    /* ADAPTACIÓN ESCRITORIO */
+    /* ============================================================
+       ADAPTACIÓN FLUIDA Y MODULAR PARA ESCRITORIO (min-width: 1024px)
+       ============================================================ */
     @media (min-width: 1024px) {
       .mobile-container {
-        max-width: 900px;
-        display: grid;
-        grid-template-columns: 1fr 1fr;
+        max-width: 1140px;
         border-radius: 28px;
+        display: flex;
+        flex-direction: column;
       }
 
       .hero-section {
-        min-height: 650px;
+        min-height: 520px;
+        padding: 40px;
+      }
+
+      .hero-title {
+        font-size: 2.5rem;
+        max-width: 700px;
+      }
+
+      .hero-subtitle {
+        font-size: 1.05rem;
+        max-width: 650px;
+      }
+
+      .hero-content .btn {
+        width: auto;
+        padding: 16px 36px;
       }
 
       .info-card {
-        margin: 24px;
-        align-self: center;
+        margin: -40px 32px 32px 32px;
+        padding: 24px 32px;
       }
 
+      /* Pausar la cinta al pasar el mouse en escritorio */
+      .ticker-wrapper:hover .ticker-track {
+        animation-play-state: paused;
+      }
+
+      /* Grid modular para la sección principal de contenido */
       .scroll-section {
+        padding: 32px;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 32px;
+      }
+
+      /* Ocupan ancho completo */
+      .content-block, 
+      .about-section {
         grid-column: span 2;
-        padding: 24px 32px;
+      }
+
+      /* Se acomodan lado a lado en escritorio */
+      .entrepreneur-card {
+        margin-top: 0;
+        grid-column: span 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+      }
+
+      .calculator-container {
+        grid-column: span 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+
+      /* Mi Método: 4 pasos distribuidos en horizontal */
+      .method-steps {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 16px;
+      }
+
+      /* Acerca de Fer: alineado en horizontal */
+      .about-section {
+        flex-direction: row;
+        text-align: left;
+        justify-content: center;
+        gap: 32px;
+        padding: 40px;
+      }
+
+      .about-photo-wrapper img {
+        width: 140px;
+        height: 140px;
       }
     }
   </style>
@@ -733,7 +803,7 @@
     <!-- TARJETA FLOTANTE GLASSMORPHISM -->
     <div class="info-card reveal">
       
-      <!-- CINTA EN CONTINUO SCROLL AUTOMÁTICO HORIZONAL -->
+      <!-- CINTA EN CONTINUO SCROLL AUTOMÁTICO HORIZONTAL -->
       <div class="ticker-wrapper">
         <div class="ticker-track">
           <!-- Bloque de conceptos 1 -->
@@ -796,7 +866,7 @@
 
       <!-- SECCIÓN QUÉ QUIERES CONSTRUIR -->
       <div class="entrepreneur-card reveal">
-        <img id="entrepreneurAvatar" src="https://i.ibb.co/twKwDFqt/MG-8999.jpg" alt="Fer Rangel" class="entrepreneur-avatar-top">
+        <img id="entrepreneurAvatar" src="https://i.ibb.co/BXm9zTF/carrusel01.jpg" alt="Fer Rangel" class="entrepreneur-avatar-top">
         <span class="entrepreneur-badge">Planificación a tu medida</span>
         <h3>¿QUÉ QUIERES CONSTRUIR?</h3>
 
@@ -990,12 +1060,13 @@
 
   <!-- SCRIPTS FUNCIONALES -->
   <script>
-    // Enlaces de las cuatro imágenes para carga aleatoria en Hero y Avatares
+    // Nuevos enlaces de imágenes de la cabecera / carrusel para rotación aleatoria
     const ferImages = [
-      'https://i.ibb.co/XZ6gVW2W/IMG-8763.jpg',
-      'https://i.ibb.co/p6yrfZqb/IMG-8567.jpg',
-      'https://i.ibb.co/ynyT0XLK/IMG-8613.jpg',
-      'https://i.ibb.co/6cWSqwYR/IMG-8661.jpg'
+      'https://i.ibb.co/BXm9zTF/carrusel01.jpg',
+      'https://i.ibb.co/Sw98t93g/carrusel02.jpg',
+      'https://i.ibb.co/kgsw3HRy/carrusel03.jpg',
+      'https://i.ibb.co/SXVVVhGz/carrusel04.jpg',
+      'https://i.ibb.co/VpLg5jyH/carrusel05.jpg'
     ];
 
     function getRandomImage() {
