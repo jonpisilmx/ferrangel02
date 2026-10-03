@@ -35,7 +35,7 @@
       justify-content: center;
       align-items: center;
       min-height: 100vh;
-      padding: 60px 0 20px 0; /* Espacio extra superior para la mitad del logo que sobresale */
+      padding: 60px 0 20px 0;
       overflow-x: hidden;
     }
 
@@ -57,7 +57,7 @@
       position: absolute;
       top: 0;
       left: 50%;
-      transform: translate(-50%, -50%); /* Posiciona 50% afuera y 50% adentro */
+      transform: translate(-50%, -50%);
       width: 100px;
       height: 100px;
       border-radius: 50%;
@@ -78,12 +78,12 @@
       display: block;
     }
 
-    /* HERO SECTION CON PERSONAJE DE FONDO DINÁMICO */
+    /* HERO SECTION */
     .hero-section {
       position: relative;
       min-height: 580px;
       padding: 24px;
-      padding-top: 60px; /* Margen para dar espacio al logo interno */
+      padding-top: 60px;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
@@ -95,7 +95,6 @@
       transition: background-image 0.4s ease-in-out;
     }
 
-    /* HEADER Y NAVEGACIÓN FLOTANTE */
     .header {
       display: flex;
       justify-content: space-between;
@@ -142,7 +141,6 @@
       font-size: 1.2rem;
     }
 
-    /* CONTENIDO HERO */
     .hero-content {
       margin-top: auto;
       margin-bottom: 20px;
@@ -206,7 +204,7 @@
       transform: translateY(-2px);
     }
 
-    /* TARJETA FLOTANTE (GLASSMORPHISM) */
+    /* TARJETA FLOTANTE GLASSMORPHISM */
     .info-card {
       background-color: var(--card-bg);
       backdrop-filter: blur(12px);
@@ -255,12 +253,8 @@
     }
 
     @keyframes marquee {
-      0% {
-        transform: translateX(0%);
-      }
-      100% {
-        transform: translateX(-50%);
-      }
+      0% { transform: translateX(0%); }
+      100% { transform: translateX(-50%); }
     }
 
     .social-proof {
@@ -290,12 +284,11 @@
       cursor: pointer;
       border: none;
       box-shadow: 0 2px 8px rgba(37, 211, 102, 0.3);
-      transition: transform 0.2s ease, background-color 0.2s ease;
+      transition: transform 0.2s ease;
     }
 
     .whatsapp-badge-btn:hover {
       transform: scale(1.05);
-      background-color: #20ba5a;
     }
 
     .whatsapp-icon-svg {
@@ -431,7 +424,7 @@
       line-height: 1.4;
     }
 
-    /* CALCULADORA DE RETIRO */
+    /* CALCULADORA DE RETIRO - MODELO MAURICIO MORENO */
     .calculator-container {
       background: var(--card-bg);
       border-radius: 24px;
@@ -465,50 +458,6 @@
       outline: none;
     }
 
-    select.form-control {
-      appearance: none;
-      -webkit-appearance: none;
-      -moz-appearance: none;
-      background-image: url("data:image/svg+xml;utf8,<svg fill='%23111462' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/></svg>");
-      background-repeat: no-repeat;
-      background-position: right 10px center;
-      cursor: pointer;
-    }
-
-    .radio-group {
-      display: flex;
-      gap: 8px;
-    }
-
-    .radio-option {
-      flex: 1;
-    }
-
-    .radio-option input {
-      display: none;
-    }
-
-    .radio-option label {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 10px 4px;
-      background: #FFFFFF;
-      border: 1px solid var(--border-color);
-      border-radius: 10px;
-      cursor: pointer;
-      font-weight: 500;
-      color: var(--navy-primary);
-      font-size: 0.8rem;
-    }
-
-    .radio-option input:checked + label {
-      background: var(--navy-primary);
-      border-color: var(--navy-primary);
-      color: #FFFFFF;
-      font-weight: 600;
-    }
-
     .calc-result-box {
       background: rgba(228, 236, 239, 0.8);
       border-radius: 14px;
@@ -518,29 +467,48 @@
       margin-top: 10px;
     }
 
+    .result-row {
+      margin-bottom: 14px;
+      padding-bottom: 10px;
+      border-bottom: 1px dashed var(--border-color);
+    }
+
+    .result-row:last-child {
+      border-bottom: none;
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
+
     .result-title {
-      font-size: 0.7rem;
+      font-size: 0.72rem;
       text-transform: uppercase;
-      letter-spacing: 1.2px;
+      letter-spacing: 1px;
       color: var(--navy-primary);
       margin-bottom: 4px;
       font-weight: 600;
     }
 
     .result-amount {
-      font-size: 1.8rem;
+      font-size: 1.6rem;
       color: var(--magenta-accent);
       font-weight: 700;
-      margin-bottom: 8px;
+    }
+
+    .result-monthly {
+      font-size: 1.4rem;
+      color: var(--navy-primary);
+      font-weight: 700;
     }
 
     .result-note {
       font-size: 0.75rem;
       color: var(--text-muted);
+      margin-top: 6px;
       margin-bottom: 14px;
+      line-height: 1.35;
     }
 
-    /* CARRUSEL DE TESTIMONIOS (SLIDER) */
+    /* CARRUSEL DE TESTIMONIOS */
     .testimonial-carousel {
       position: relative;
       margin-top: 14px;
@@ -579,7 +547,6 @@
       display: block;
     }
 
-    /* BOTONES DE NAVEGACIÓN DEL CARRUSEL */
     .carousel-nav-btn {
       position: absolute;
       top: 50%;
@@ -597,22 +564,11 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      transition: background 0.2s ease;
     }
 
-    .carousel-nav-btn:hover {
-      background: var(--magenta-accent);
-    }
+    .carousel-btn-prev { left: 8px; }
+    .carousel-btn-next { right: 8px; }
 
-    .carousel-btn-prev {
-      left: 8px;
-    }
-
-    .carousel-btn-next {
-      right: 8px;
-    }
-
-    /* INDICADORES (DOTS) */
     .carousel-dots {
       display: flex;
       justify-content: center;
@@ -654,7 +610,6 @@
       box-shadow: 0 6px 16px rgba(17, 20, 98, 0.12);
     }
 
-    /* FOOTER */
     footer {
       text-align: center;
       padding: 20px;
@@ -702,7 +657,6 @@
       color: var(--navy-primary);
     }
 
-    /* ANIMACIONES SCROLL REVEAL BIDIRECCIONAL */
     .reveal {
       opacity: 0;
       transform: translateY(35px);
@@ -715,55 +669,21 @@
       transform: translateY(0);
     }
 
-    /* ============================================================
-       ADAPTACIÓN FLUIDA Y MODULAR PARA ESCRITORIO (min-width: 1024px)
-       ============================================================ */
     @media (min-width: 1024px) {
       .mobile-container {
         max-width: 1140px;
         border-radius: 28px;
-        display: flex;
-        flex-direction: column;
-      }
-
-      .header-logo-container {
-        width: 120px;
-        height: 120px;
       }
 
       .hero-section {
         min-height: 520px;
         padding: 40px;
         padding-top: 70px;
-        border-radius: 28px 28px 0 0;
       }
 
-      .hero-title {
-        font-size: 2.5rem;
-        max-width: 700px;
-      }
+      .hero-title { font-size: 2.5rem; max-width: 700px; }
+      .hero-subtitle { font-size: 1.05rem; max-width: 650px; }
 
-      .hero-subtitle {
-        font-size: 1.05rem;
-        max-width: 650px;
-      }
-
-      .hero-content .btn {
-        width: auto;
-        padding: 16px 36px;
-      }
-
-      .info-card {
-        margin: -40px 32px 32px 32px;
-        padding: 24px 32px;
-      }
-
-      /* Pausar la cinta al pasar el mouse en escritorio */
-      .ticker-wrapper:hover .ticker-track {
-        animation-play-state: paused;
-      }
-
-      /* Grid modular para la sección principal de contenido */
       .scroll-section {
         padding: 32px;
         display: grid;
@@ -771,51 +691,20 @@
         gap: 32px;
       }
 
-      /* Ocupan ancho completo */
-      .content-block, 
-      .about-section {
-        grid-column: span 2;
-      }
+      .content-block, .about-section { grid-column: span 2; }
+      .entrepreneur-card, .calculator-container { grid-column: span 1; margin-top: 0; }
 
-      /* Se acomodan lado a lado en escritorio */
-      .entrepreneur-card {
-        margin-top: 0;
-        grid-column: span 1;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-      }
-
-      .calculator-container {
-        grid-column: span 1;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-      }
-
-      /* Mi Método: 4 pasos distribuidos en horizontal */
       .method-steps {
         display: grid;
         grid-template-columns: repeat(4, 1fr);
         gap: 16px;
       }
 
-      /* Acerca de Fer: alineado en horizontal */
       .about-section {
         flex-direction: row;
         text-align: left;
         justify-content: center;
         gap: 32px;
-        padding: 40px;
-      }
-
-      .about-photo-wrapper img {
-        width: 140px;
-        height: 140px;
-      }
-
-      footer {
-        border-radius: 0 0 28px 28px;
       }
     }
   </style>
@@ -823,12 +712,11 @@
 <body>
 
   <div class="mobile-container">
-    <!-- CONTENEDOR CIRCULAR DEL LOGO QUE SOBRESALE DEL TOP DEL CARRUSEL DE IMÁGENES -->
     <div class="header-logo-container">
       <img src="https://i.ibb.co/gFy2Tb0M/logofer.jpg" alt="Logo Fernanda Rangel">
     </div>
 
-    <!-- HERO SECTION CON PERSONAJE DE FONDO ALEATORIO -->
+    <!-- HERO SECTION -->
     <div class="hero-section" id="heroSection">
       <header class="header reveal">
         <a href="#" class="brand-logo">
@@ -848,30 +736,26 @@
 
     <!-- TARJETA FLOTANTE GLASSMORPHISM -->
     <div class="info-card reveal">
-      
-      <!-- CINTA EN CONTINUO SCROLL AUTOMÁTICO HORIZONTAL -->
       <div class="ticker-wrapper">
         <div class="ticker-track">
-          <!-- Bloque de conceptos 1 -->
           <div class="ticker-item"><strong>Retiro:</strong> garantiza un estilo de vida y tu libertad financiera.</div>
           <span class="ticker-separator">✦</span>
           <div class="ticker-item"><strong>Ahorro:</strong> Haz crecer tu patrimonio con un objetivo claro en un plazo específico.</div>
           <span class="ticker-separator">✦</span>
           <div class="ticker-item"><strong>Salud:</strong> Protege lo más valioso, la salud propia y la de los tuyos.</div>
           <span class="ticker-separator">✦</span>
-          <div class="ticker-item"><strong>Educación:</strong> asegura que sin importar las circunstacias, el futuro educativo de tus hijos sea una realidad.</div>
+          <div class="ticker-item"><strong>Educación:</strong> asegura que el futuro educativo de tus hijos sea una realidad.</div>
           <span class="ticker-separator">✦</span>
           <div class="ticker-item"><strong>Protección:</strong> Blinda el patrimonio, protegiendo bienes de alto valor.</div>
           <span class="ticker-separator">✦</span>
-
-          <!-- Bloque duplicado para bucle continuo fluído -->
+          <!-- Bucle continuo -->
           <div class="ticker-item"><strong>Retiro:</strong> garantiza un estilo de vida y tu libertad financiera.</div>
           <span class="ticker-separator">✦</span>
           <div class="ticker-item"><strong>Ahorro:</strong> Haz crecer tu patrimonio con un objetivo claro en un plazo específico.</div>
           <span class="ticker-separator">✦</span>
           <div class="ticker-item"><strong>Salud:</strong> Protege lo más valioso, la salud propia y la de los tuyos.</div>
           <span class="ticker-separator">✦</span>
-          <div class="ticker-item"><strong>Educación:</strong> asegura que sin importar las circunstacias, el futuro educativo de tus hijos sea una realidad.</div>
+          <div class="ticker-item"><strong>Educación:</strong> asegura que el futuro educativo de tus hijos sea una realidad.</div>
           <span class="ticker-separator">✦</span>
           <div class="ticker-item"><strong>Protección:</strong> Blinda el patrimonio, protegiendo bienes de alto valor.</div>
           <span class="ticker-separator">✦</span>
@@ -883,8 +767,6 @@
           <p class="social-text">Agente de seguros desde 2017</p>
           <p style="font-size: 0.7rem; color: var(--text-muted);">MDRT · Asesoría personalizada</p>
         </div>
-        
-        <!-- SÍMBOLO DE WHATSAPP JUNTO AL NOMBRE DE FER RANGEL -->
         <button class="whatsapp-badge-btn" onclick="openContactModal()">
           <svg class="whatsapp-icon-svg" viewBox="0 0 24 24">
             <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
@@ -894,25 +776,16 @@
       </div>
     </div>
 
-    <!-- SECCIÓN DE CONTENIDO INTEGRAL -->
     <div class="scroll-section">
-      
-      <!-- NARRATIVA FAMILIAR/LINAJE -->
+      <!-- NARRATIVA FAMILIAR -->
       <div class="content-block reveal">
         <h3>Sanar el linaje, proteger la descendencia</h3>
-        <p style="margin-bottom: 12px;">
-          Nuestra relación con el dinero también se hereda: creencias, miedos y patrones que muchas veces repetimos sin darnos cuenta.
-        </p>
-        <p style="margin-bottom: 12px;">
-          <strong>Sanar el linaje</strong> es elegir qué dejamos de repetir.<br>
-          <strong>Proteger la descendencia</strong> es decidir qué queremos empezar a construir.
-        </p>
-        <p style="color: var(--navy-primary); font-weight: 600;">
-          Porque la conciencia financiera no es solo dinero. Es transformar nuestra historia y la de quienes vienen después.
-        </p>
+        <p style="margin-bottom: 12px;">Nuestra relación con el dinero también se hereda: creencias, miedos y patrones que muchas veces repetimos sin darnos cuenta.</p>
+        <p style="margin-bottom: 12px;"><strong>Sanar el linaje</strong> es elegir qué dejamos de repetir.<br><strong>Proteger la descendencia</strong> es decidir qué queremos empezar a construir.</p>
+        <p style="color: var(--navy-primary); font-weight: 600;">Porque la conciencia financiera no es solo dinero. Es transformar nuestra historia y la de quienes vienen después.</p>
       </div>
 
-      <!-- SECCIÓN QUÉ QUIERES CONSTRUIR -->
+      <!-- QUÉ QUIERES CONSTRUIR -->
       <div class="entrepreneur-card reveal">
         <img id="entrepreneurAvatar" src="https://i.ibb.co/twKwDFqt/MG-8999.jpg" alt="Fer Rangel" class="entrepreneur-avatar-top">
         <span class="entrepreneur-badge">Planificación a tu medida</span>
@@ -922,27 +795,22 @@
           <h4>🧓 Quiero preparar mi retiro</h4>
           <p>Construir patrimonio para que tu futuro no dependa de nadie.</p>
         </div>
-
         <div class="kit-feature-card">
           <h4>💰 Quiero empezar a ahorrar</h4>
           <p>Crear una estrategia que tenga sentido para tus metas.</p>
         </div>
-
         <div class="kit-feature-card">
           <h4>🎓 Quiero asegurar la educación de mis hijos</h4>
           <p>Construir desde hoy una parte de su futuro.</p>
         </div>
-
         <div class="kit-feature-card">
           <h4>🩺 Quiero proteger mi salud</h4>
           <p>Tener respaldo financiero ante un imprevisto médico.</p>
         </div>
-
         <div class="kit-feature-card">
           <h4>🛡️ Quiero proteger a mi familia</h4>
           <p>Que quienes amas estén respaldados aun cuando la vida cambie.</p>
         </div>
-
         <div class="kit-feature-card">
           <h4>🏢 Soy empresaria/o</h4>
           <p>Protección, retiro y estrategias para tu negocio.</p>
@@ -951,40 +819,37 @@
         <button class="btn" style="margin-top: 10px;" onclick="openContactModal('estrategias_fiscales_hombre_clave')">PROTEGER MI FUTURO</button>
       </div>
 
-      <!-- CALCULADORA DE RETIROS FUNCIONAL -->
+      <!-- CALCULADORA DE RETIRO (ALINEADA AL MODELO MAURICIO MORENO) -->
       <div class="calculator-container reveal" id="calculadora">
         <h3 style="color: var(--navy-primary); font-size: 1.2rem; margin-bottom: 6px; text-align: center;">Calculadora de Retiro Consciente</h3>
-        <p style="color: var(--text-muted); font-size: 0.8rem; text-align: center; margin-bottom: 16px;">Visualiza cómo pequeños ajustes de hoy transforman tu futuro.</p>
+        <p style="color: var(--text-muted); font-size: 0.8rem; text-align: center; margin-bottom: 16px;">Descubre cuánto puedes acumular y la pensión estimada que recibirás a tus 65 años.</p>
 
         <div class="form-group">
           <label for="age">Edad actual</label>
-          <input type="number" id="age" class="form-control" value="32" min="18" max="60" oninput="calculateRetirement()">
+          <input type="number" id="age" class="form-control" value="30" min="18" max="60" oninput="calculateRetirement()">
         </div>
 
         <div class="form-group">
-          <label for="monthlySavings">Ahorro mensual proyectado ($ MXN)</label>
+          <label for="monthlySavings">Ahorro mensual estimado ($ MXN)</label>
           <input type="number" id="monthlySavings" class="form-control" value="3000" step="500" min="1000" oninput="calculateRetirement()">
         </div>
 
-        <div class="form-group">
-          <label>Hábitos de bienestar (Fumar)</label>
-          <div class="radio-group">
-            <div class="radio-option">
-              <input type="radio" id="smokerNo" name="smoker" value="no" checked onchange="calculateRetirement()">
-              <label for="smokerNo">No fumo</label>
-            </div>
-            <div class="radio-option">
-              <input type="radio" id="smokerYes" name="smoker" value="yes" onchange="calculateRetirement()">
-              <label for="smokerYes">Sí fumo</label>
-            </div>
-          </div>
-        </div>
-
         <div class="calc-result-box">
-          <div class="result-title">Proyección a tus 65 años</div>
-          <div class="result-amount" id="totalResult">$0</div>
-          <p class="result-note" id="resultExplanation">Esta cifra representa la reserva estimada que respaldará tu calidad de vida.</p>
-          <button class="btn" onclick="openContactModal('ppr')">Platicar este resultado con Fer</button>
+          <div class="result-row">
+            <div class="result-title">Monto estimado acumulado a tus 65 años</div>
+            <div class="result-amount" id="totalResult">$0 MXN</div>
+          </div>
+
+          <div class="result-row">
+            <div class="result-title">Pensión mensual estimada acumulada</div>
+            <div class="result-monthly" id="monthlyPension">$0 MXN / mes</div>
+          </div>
+
+          <p class="result-note" id="resultExplanation">
+            Proyección calculada a tu edad de retiro (65 años) considerando rendimiento compuesto y protección contra la inflación (UDIs).
+          </p>
+
+          <button class="btn" onclick="openContactModal('ppr')">Diseñar mi plan con Fer</button>
         </div>
       </div>
 
@@ -998,17 +863,14 @@
             <div class="method-step-title">1. Platicamos</div>
             <div class="method-step-text">Me cuentas dónde estás y qué quieres lograr.</div>
           </div>
-          
           <div class="method-step">
             <div class="method-step-title">2. Diseñamos</div>
             <div class="method-step-text">Revisamos alternativas y números reales.</div>
           </div>
-
           <div class="method-step">
             <div class="method-step-title">3. Tú decides</div>
             <div class="method-step-text">Sin presión y entendiendo perfectamente qué estás contratando.</div>
           </div>
-
           <div class="method-step">
             <div class="method-step-title">4. Te acompaño</div>
             <div class="method-step-text">Mi trabajo no termina cuando se emite tu póliza.</div>
@@ -1016,7 +878,7 @@
         </div>
       </div>
 
-      <!-- CARRUSEL DE TESTIMONIOS CON NUEVAS IMÁGENES (AUTOMÁTICO CADA 10 SEGUNDOS) -->
+      <!-- CARRUSEL DE TESTIMONIOS -->
       <div class="content-block reveal">
         <h3 style="text-align: center;">La experiencia de quienes ya comenzaron</h3>
         <p style="text-align: center; font-size: 0.8rem; margin-bottom: 6px;">Mensajes reales de clientes felices con su nueva póliza.</p>
@@ -1030,13 +892,11 @@
                 <img src="https://i.ibb.co/h119p8dD/Disen-o-sin-ti-tulo.png" alt="Testimonio WhatsApp 1">
               </div>
             </div>
-            
             <div class="carousel-slide">
               <div class="carousel-img-card">
                 <img src="https://i.ibb.co/BKsvkdxm/20261002-173120-0000.png" alt="Testimonio WhatsApp 2">
               </div>
             </div>
-
             <div class="carousel-slide">
               <div class="carousel-img-card">
                 <img src="https://i.ibb.co/kCCht6h/20261002-173144-0000.png" alt="Testimonio WhatsApp 3">
@@ -1064,7 +924,6 @@
           <p style="font-size: 0.82rem; color: var(--text-muted); line-height: 1.45;">Acompaño a personas y familias a estructurar su patrimonio con una visión de Conciencia Financiera, empática y equilibrada, traduciendo instrumentos complejos en tranquilidad real.</p>
         </div>
       </div>
-
     </div>
 
     <!-- FOOTER -->
@@ -1108,7 +967,6 @@
 
   <!-- SCRIPTS FUNCIONALES -->
   <script>
-    // Enlaces de imágenes para rotación aleatoria
     const ferImages = [
       'https://i.ibb.co/BXm9zTF/carrusel01.jpg',
       'https://i.ibb.co/Sw98t93g/carrusel02.jpg',
@@ -1122,7 +980,7 @@
       return ferImages[randomIndex];
     }
 
-    // LÓGICA DEL CARRUSEL DE TESTIMONIOS
+    /* CARRUSEL DE TESTIMONIOS */
     let currentSlide = 0;
     const totalSlides = 3;
     let carouselTimer = null;
@@ -1130,9 +988,7 @@
     function updateCarousel() {
       const track = document.getElementById('carouselTrack');
       const dots = document.querySelectorAll('.dot');
-      
       track.style.transform = `translateX(-${currentSlide * 100}%)`;
-      
       dots.forEach((dot, index) => {
         dot.classList.toggle('active', index === currentSlide);
       });
@@ -1159,7 +1015,7 @@
       carouselTimer = setInterval(() => {
         currentSlide = (currentSlide + 1) % totalSlides;
         updateCarousel();
-      }, 10000); // Automático cada 10 segundos
+      }, 10000);
     }
 
     function resetCarouselTimer() {
@@ -1167,16 +1023,50 @@
       startCarouselTimer();
     }
 
+    /* ALGORITMO DE CÁLCULO ESTILO MAURICIO MORENO */
+    function calculateRetirement() {
+      const ageInput = parseFloat(document.getElementById('age').value) || 30;
+      const monthlySavings = parseFloat(document.getElementById('monthlySavings').value) || 0;
+
+      const retirementAge = 65;
+      const yearsToInvest = Math.max(0, retirementAge - ageInput);
+      const months = yearsToInvest * 12;
+
+      // Tasa proyectada real con UDIs/rendimiento compuesto (aprox 7% anual)
+      const annualReturnRate = 0.07;
+      let totalAccumulated = 0;
+
+      if (months > 0 && monthlySavings > 0) {
+        const monthlyRate = annualReturnRate / 12;
+        totalAccumulated = monthlySavings * ((Math.pow(1 + monthlyRate, months) - 1) / monthlyRate);
+      }
+
+      // Regla del 4% / esperanza de vida (20 años de pensión post-retiro)
+      const monthlyPension = totalAccumulated > 0 ? (totalAccumulated * 0.04) / 12 : 0;
+
+      const formattedTotal = new Intl.NumberFormat('es-MX', {
+        style: 'currency',
+        currency: 'MXN',
+        maximumFractionDigits: 0
+      }).format(totalAccumulated);
+
+      const formattedPension = new Intl.NumberFormat('es-MX', {
+        style: 'currency',
+        currency: 'MXN',
+        maximumFractionDigits: 0
+      }).format(monthlyPension);
+
+      document.getElementById('totalResult').innerText = `${formattedTotal} MXN`;
+      document.getElementById('monthlyPension').innerText = `${formattedPension} MXN / mes`;
+    }
+
     document.addEventListener('DOMContentLoaded', () => {
-      // 1. Asignar imagen aleatoria para el fondo Hero
       const heroSection = document.getElementById('heroSection');
       const randomHeroImg = getRandomImage();
       heroSection.style.backgroundImage = `linear-gradient(180deg, rgba(17,20,98,0.25) 0%, rgba(17,20,98,0.75) 100%), url('${randomHeroImg}')`;
 
-      // 2. Asignar imágenes aleatorias a avatares secundarios
       document.getElementById('aboutPhoto').src = getRandomImage();
 
-      // 3. Intersection Observer bidireccional (scroll reveal y fade out)
       const observerOptions = {
         root: null,
         rootMargin: '0px',
@@ -1199,44 +1089,6 @@
       calculateRetirement();
       startCarouselTimer();
     });
-
-    // Lógica matemática de la Calculadora de Retiro
-    function calculateRetirement() {
-      const ageInput = parseFloat(document.getElementById('age').value) || 30;
-      const monthlySavings = parseFloat(document.getElementById('monthlySavings').value) || 0;
-      const isSmoker = document.querySelector('input[name="smoker"]:checked').value === 'yes';
-
-      const retirementAge = 65;
-      const yearsToInvest = Math.max(0, retirementAge - ageInput);
-
-      let annualReturnRate = 0.07;
-      if (isSmoker) {
-        annualReturnRate = 0.062;
-      }
-
-      const months = yearsToInvest * 12;
-      let totalAccumulated = 0;
-
-      if (months > 0 && monthlySavings > 0) {
-        const monthlyRate = annualReturnRate / 12;
-        totalAccumulated = monthlySavings * ((Math.pow(1 + monthlyRate, months) - 1) / monthlyRate);
-      }
-
-      const formattedTotal = new Intl.NumberFormat('es-MX', {
-        style: 'currency',
-        currency: 'MXN',
-        maximumFractionDigits: 0
-      }).format(totalAccumulated);
-
-      document.getElementById('totalResult').innerText = formattedTotal;
-
-      const noteText = document.getElementById('resultExplanation');
-      if (isSmoker) {
-        noteText.innerText = "Nota: El hábito de fumar incide en las primas actuariales y el rendimiento neto.";
-      } else {
-        noteText.innerText = "Esta cifra representa la reserva estimada que respaldará tu calidad de vida y tu hogar.";
-      }
-    }
 
     function openContactModal(selectedOption = '') {
       const selectElement = document.getElementById('tema_interes');
