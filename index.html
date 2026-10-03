@@ -216,7 +216,6 @@
       box-shadow: 0 10px 25px rgba(17,20,98,0.08);
     }
 
-    /* CINTA DE TEXTO EN CONTINUO SCROLL AUTOMÁTICO */
     .ticker-wrapper {
       width: 100%;
       overflow: hidden;
@@ -325,7 +324,6 @@
       line-height: 1.5;
     }
 
-    /* SECCIÓN QUÉ QUIERES CONSTRUIR */
     .entrepreneur-card {
       background: var(--navy-primary);
       color: #FFFFFF;
@@ -396,7 +394,6 @@
       line-height: 1.4;
     }
 
-    /* MI MÉTODO */
     .method-steps {
       display: flex;
       flex-direction: column;
@@ -424,7 +421,7 @@
       line-height: 1.4;
     }
 
-    /* CALCULADORA DE RETIRO - MODELO MAURICIO MORENO */
+    /* CALCULADORA DE RETIRO */
     .calculator-container {
       background: var(--card-bg);
       border-radius: 24px;
@@ -590,7 +587,6 @@
       transform: scale(1.2);
     }
 
-    /* ACERCA DE FER */
     .about-section {
       display: flex;
       flex-direction: column;
@@ -621,7 +617,6 @@
       border-radius: 0 0 36px 36px;
     }
 
-    /* MODAL CONTACTO */
     .modal {
       display: none;
       position: fixed;
@@ -748,7 +743,6 @@
           <span class="ticker-separator">✦</span>
           <div class="ticker-item"><strong>Protección:</strong> Blinda el patrimonio, protegiendo bienes de alto valor.</div>
           <span class="ticker-separator">✦</span>
-          <!-- Bucle continuo -->
           <div class="ticker-item"><strong>Retiro:</strong> garantiza un estilo de vida y tu libertad financiera.</div>
           <span class="ticker-separator">✦</span>
           <div class="ticker-item"><strong>Ahorro:</strong> Haz crecer tu patrimonio con un objetivo claro en un plazo específico.</div>
@@ -767,7 +761,7 @@
           <p class="social-text">Agente de seguros desde 2017</p>
           <p style="font-size: 0.7rem; color: var(--text-muted);">MDRT · Asesoría personalizada</p>
         </div>
-        <button class="whatsapp-badge-btn" onclick="openContactModal()">
+        <button class="whatsapp-badge-btn" onclick="sendDirectWhatsApp()">
           <svg class="whatsapp-icon-svg" viewBox="0 0 24 24">
             <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
           </svg>
@@ -819,7 +813,7 @@
         <button class="btn" style="margin-top: 10px;" onclick="openContactModal('estrategias_fiscales_hombre_clave')">PROTEGER MI FUTURO</button>
       </div>
 
-      <!-- CALCULADORA DE RETIRO (ALINEADA AL MODELO MAURICIO MORENO) -->
+      <!-- CALCULADORA DE RETIRO -->
       <div class="calculator-container reveal" id="calculadora">
         <h3 style="color: var(--navy-primary); font-size: 1.2rem; margin-bottom: 6px; text-align: center;">Calculadora de Retiro Consciente</h3>
         <p style="color: var(--text-muted); font-size: 0.8rem; text-align: center; margin-bottom: 16px;">Descubre cuánto puedes acumular y la pensión estimada que recibirás a tus 65 años.</p>
@@ -849,7 +843,7 @@
             Proyección calculada a tu edad de retiro (65 años) considerando rendimiento compuesto y protección contra la inflación (UDIs).
           </p>
 
-          <button class="btn" onclick="openContactModal('ppr')">Diseñar mi plan con Fer</button>
+          <button class="btn" onclick="sendCalculatorToWhatsApp()">Diseñar mi plan con Fer por WhatsApp</button>
         </div>
       </div>
 
@@ -953,11 +947,11 @@
           <label for="tema_interes">TEMA PRINCIPAL DE INTERÉS:</label>
           <select id="tema_interes" name="tema_interes" class="form-control" required>
             <option value="" disabled selected>Selecciona una opción...</option>
-            <option value="ppr">PPR</option>
-            <option value="seguro_vida_invalidez">Seguro de vida e invalidez</option>
-            <option value="gastos_medicos_mayores">Gastos médicos mayores</option>
-            <option value="seguro_educativo">Seguro educativo</option>
-            <option value="estrategias_fiscales_hombre_clave">Estrategias fiscales (Hombre clave)</option>
+            <option value="PPR (Plan Personal de Retiro)">PPR</option>
+            <option value="Seguro de vida e invalidez">Seguro de vida e invalidez</option>
+            <option value="Gastos médicos mayores">Gastos médicos mayores</option>
+            <option value="Seguro educativo">Seguro educativo</option>
+            <option value="Estrategias fiscales (Hombre clave)">Estrategias fiscales (Hombre clave)</option>
           </select>
         </div>
         <button type="submit" class="btn">Agendar mi sesión</button>
@@ -967,6 +961,8 @@
 
   <!-- SCRIPTS FUNCIONALES -->
   <script>
+    const PHONE_NUMBER = "524624196176";
+
     const ferImages = [
       'https://i.ibb.co/BXm9zTF/carrusel01.jpg',
       'https://i.ibb.co/Sw98t93g/carrusel02.jpg',
@@ -1032,7 +1028,6 @@
       const yearsToInvest = Math.max(0, retirementAge - ageInput);
       const months = yearsToInvest * 12;
 
-      // Tasa proyectada real con UDIs/rendimiento compuesto (aprox 7% anual)
       const annualReturnRate = 0.07;
       let totalAccumulated = 0;
 
@@ -1041,7 +1036,6 @@
         totalAccumulated = monthlySavings * ((Math.pow(1 + monthlyRate, months) - 1) / monthlyRate);
       }
 
-      // Regla del 4% / esperanza de vida (20 años de pensión post-retiro)
       const monthlyPension = totalAccumulated > 0 ? (totalAccumulated * 0.04) / 12 : 0;
 
       const formattedTotal = new Intl.NumberFormat('es-MX', {
@@ -1093,7 +1087,12 @@
     function openContactModal(selectedOption = '') {
       const selectElement = document.getElementById('tema_interes');
       if (selectedOption) {
-        selectElement.value = selectedOption;
+        for (let option of selectElement.options) {
+          if (option.value.toLowerCase().includes(selectedOption.toLowerCase())) {
+            selectElement.value = option.value;
+            break;
+          }
+        }
       }
       document.getElementById('contactModal').style.display = 'flex';
     }
@@ -1102,10 +1101,49 @@
       document.getElementById('contactModal').style.display = 'none';
     }
 
+    /* ENVÍO DEL FORMULARIO DE CONTACTO A WHATSAPP */
     function handleFormSubmit(event) {
       event.preventDefault();
-      alert("Gracias por dar este paso. Fer Rangel se pondrá en contacto contigo muy pronto.");
+      
+      const name = document.getElementById('userName').value.trim();
+      const contact = document.getElementById('userContact').value.trim();
+      const topicSelect = document.getElementById('tema_interes');
+      const topicText = topicSelect.options[topicSelect.selectedIndex].text;
+
+      const message = `Hola Fer, me gustaría agendar una sesión de asesoría.\n\n` +
+                      `👤 *Nombre:* ${name}\n` +
+                      `📱 *Contacto:* ${contact}\n` +
+                      `📌 *Tema de interés:* ${topicText}`;
+
+      const whatsappUrl = `https://wa.me/${PHONE_NUMBER}?text=${encodeURIComponent(message)}`;
+      
+      window.open(whatsappUrl, '_blank');
       closeContactModal();
+    }
+
+    /* ENVÍO DIRECTO DE RESULTADOS DE CALCULADORA A WHATSAPP */
+    function sendCalculatorToWhatsApp() {
+      const age = document.getElementById('age').value || "30";
+      const monthlySavings = document.getElementById('monthlySavings').value || "0";
+      const totalResult = document.getElementById('totalResult').innerText;
+      const monthlyPension = document.getElementById('monthlyPension').innerText;
+
+      const message = `Hola Fer, calculé mi proyección de retiro en tu sitio web y quiero platicar mis resultados:\n\n` +
+                      `🎂 *Edad actual:* ${age} años\n` +
+                      `💰 *Ahorro mensual proyectado:* $${monthlySavings} MXN\n` +
+                      `📊 *Monto acumulado a los 65 años:* ${totalResult}\n` +
+                      `💵 *Pensión mensual estimada:* ${monthlyPension}\n\n` +
+                      `Me gustaría diseñar una estrategia personalizada para hacer esto realidad.`;
+
+      const whatsappUrl = `https://wa.me/${PHONE_NUMBER}?text=${encodeURIComponent(message)}`;
+      window.open(whatsappUrl, '_blank');
+    }
+
+    /* ENLACE DIRECTO A WHATSAPP */
+    function sendDirectWhatsApp() {
+      const message = `Hola Fer, estuve navegando en tu sitio web y me gustaría ponerme en contacto contigo para recibir asesoría sobre Conciencia Financiera.`;
+      const whatsappUrl = `https://wa.me/${PHONE_NUMBER}?text=${encodeURIComponent(message)}`;
+      window.open(whatsappUrl, '_blank');
     }
   </script>
 </body>
